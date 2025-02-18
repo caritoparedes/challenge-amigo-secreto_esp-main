@@ -39,7 +39,7 @@ function agregarAmigo(){
            //limpiar contenido de la lista actualizarlista
            listaAmigos.innerHTML="";
     
-     //recorrer el arrelgo
+     //recorrer el arreglo
 
      for(let i=0;i <amigos.length;i++){
         const li=document.createElement('li');
@@ -50,5 +50,22 @@ function agregarAmigo(){
 
     }
 
+//selecionar amigos secreto
 
+function sortearAmigo(){
+     //valdar si existen amigos disponibles
+
+     if(amigos.length==0){
+        alert("no hay amigos disponibles para jugar");
+        return;
+     }
+     //generar indice aleatorio
+
+     const indiceAleatorio=Math.floor(Math.random() * amigos.length);
+
+     const amigoSorteado=amigos[indiceAleatorio];
+
+     const resultado =document.getElementById('resultado');
+     resultado.innerHTML='Amigo sorteado es: <strong>${amigoSorteado}</strong>';
+}
 
