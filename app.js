@@ -65,5 +65,11 @@ function sortearAmigo(){
 
      const resultado =document.getElementById("resultado");
      resultado.innerHTML='Amigo sorteado es: <strong>${amigoSorteado}</strong>';
+
+     document.addEventListener('DOMContentLoaded',() => {
+        document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo)
+        document.getElementById("btnSortear").addEventListener("click",sortearAmigo)
+     });
+    
 }
 
