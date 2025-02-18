@@ -50,7 +50,7 @@ function agregarAmigo(){
 
     }
 
-//selecionar amigos secreto
+//selecionar amigo secreto
 
 function sortearAmigo(){
      //valdar si existen amigos disponibles
