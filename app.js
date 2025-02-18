@@ -2,9 +2,10 @@
 let amigos= [];
 
 
+
 function agregarAmigo(){
-    const Amigo=document.getElementById("amigo");
-    const nombreAmigo= Amigo.ariaValueMax.trim();
+    const inputAmigo=document.getElementById("amigo");
+    const nombreAmigo= inputAmigo.value.trim();
 
     //Validar campo no vacio
 
@@ -13,13 +14,6 @@ function agregarAmigo(){
         return;
             }
 
-            //validar que nombre no este duplicado
-
-            if(amigos.includes(nombreAmigo)){
-            alert('El nombre ${nombreAmigo}' ya se encuntra en la Lista);
-            return;
-        }
-
 
         // agregar el nombre al arreglo amigos
 
@@ -27,6 +21,9 @@ function agregarAmigo(){
 
         //actualizar la lista en el Html
         actualizarlista();
+
+        inputAmigo.value="";
+        inputAmigo.focus();
 
     }
 
@@ -40,12 +37,12 @@ function agregarAmigo(){
     
      //recorrer el arreglo
 
-     for(let i=0;i <amigos.length;i++){
-        const li=document.createElement('li');
-        li.textContent=amigos[i];
+     amigos.forEach(amigo => {
+        const li=document.createElement("li");
+        li.textContent=amigo;
         listaAmigos.appendChild(li);
 
-     }
+     });
 
     }
 
@@ -55,21 +52,20 @@ function sortearAmigo(){
      //valdar si existen amigos disponibles
 
      if(amigos.length === 0){
-        alert("no hay amigos disponibles para jugar");
+        alert("No hay amigos disponibles para jugar");
         return;
      }
      //generar indice aleatorio
 
-     const indiceAleatorio=Math.floor(Math.random() * amigos.length);
-     const amigoSorteado= amigoSorteado[indiceAleatorio];
-
-     const resultado =document.getElementById("resultado");
-     resultado.innerHTML='Amigo sorteado es: <strong>${amigoSorteado}</strong>';
-
-     document.addEventListener('DOMContentLoaded',() => {
-        document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo)
-        document.getElementById("btnSortear").addEventListener("click",sortearAmigo)
-     });
+     const amigoAleatorio=Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[amigoAleatorio];
+    
+    const resultado =document.getElementById("resultado");
+    resultado.innerHTML = <li>${amigoSorteado}</li>;
+    
     
 }
-
+document.addEventListener('DOMContentLoaded',() => {
+    document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo);
+    document.getElementById("btnSortear").addEventListener("click",sortearAmigo);
+ });
