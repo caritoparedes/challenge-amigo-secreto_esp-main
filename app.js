@@ -46,8 +46,6 @@ function agregarAmigo(){
 
     }
 
-//selecionar amigo secreto
-
 function sortearAmigo(){
      //valdar si existen amigos disponibles
 
@@ -55,16 +53,18 @@ function sortearAmigo(){
         alert("No hay amigos disponibles para jugar");
         return;
      }
-     //generar indice aleatorio
+     const Sorteado=Math.floor(Math.random() * amigos.length);
+   const amigoSorteado = amigos[Sorteado];
+   const resultado = document.getElementById("resultado");  
+  resultado.innerHTML = <li>${amigoSorteado}</li>;
 
-     const amigoAleatorio=Math.floor(Math.random() * amigos.length);
-    const amigoSorteado = amigos[amigoAleatorio];
-    
-    const resultado =document.getElementById("resultado");
-    resultado.innerHTML = <li>${amigoSorteado}</li>;
-    
-    
+
+
 }
+    
+    
+
+
 document.addEventListener('DOMContentLoaded',() => {
     document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo);
     document.getElementById("btnSortear").addEventListener("click",sortearAmigo);
