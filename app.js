@@ -28,6 +28,27 @@ function agregarAmigo(){
 
         //actualizar la lista en el Html
         actualizarlista();
-        
+
     }
+
+     //actualizar la lista de amigos interfaz
+
+     function actualizarlista(){
+           const listaAmigos=document.getElementById('ListaAmigos');
+
+           //limpiar contenido de la lista actualizarlista
+           listaAmigos.innerHTML="";
+    
+     //recorrer el arrelgo
+
+     for(let i=0;i <amigos.length;i++){
+        const li=document.createElement('li');
+        li.textContent=amigos[i];
+        listaAmigos.appendChild(li);
+
+     }
+
+    }
+
+
 
