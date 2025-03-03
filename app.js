@@ -31,7 +31,7 @@ function agregarAmigo(){
 
      for(let i=0; i < amigos.length;i++){
 
-     }
+     
          let item=document.createElement("li");
         item.textContent=amigo[i];
         listaAmigos.appendChild(item);
@@ -40,17 +40,16 @@ function agregarAmigo(){
 
     }
 
-function sortearAmigo(){
+function sortearAmigo(){´'
      //valdar si existen amigos disponibles
 
-     if(amigos.length === 0){
+     if(amigo.length === 0){
         alert("No hay amigos disponibles para jugar");
         return;
      }
-     const Sorteado=Math.floor(Math.random() * amigos.length);
-   const amigoSorteado = amigos[Sorteado];
-   const resultado = document.getElementById("resultado");  
-  resultado.innerHTML = <li>${amigoSorteado}</li>;
+     let amigoSorteado=amigo[Math.floor(Math.random() * amigos.length)];
+     let resultado = document.getElementById("resultado");  
+     resultado.innerHTML =
 
 
 
@@ -59,7 +58,4 @@ function sortearAmigo(){
     
 
 
-document.addEventListener('DOMContentLoaded',() => {
-    document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo);
-    document.getElementById("btnSortear").addEventListener("click",sortearAmigo);
- });
+
