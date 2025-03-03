@@ -32,11 +32,11 @@ function agregarAmigo(){
      for(let i=0; i < amigos.length;i++){
 
      }
-        const li=document.createElement("li");
-        li.textContent=amigo;
-        listaAmigos.appendChild(li);
+         let item=document.createElement("li");
+        item.textContent=amigo[i];
+        listaAmigos.appendChild(item);
 
-     });
+     }
 
     }
 
