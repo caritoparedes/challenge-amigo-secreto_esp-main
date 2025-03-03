@@ -5,29 +5,21 @@ let amigos= [];
 
 function agregarAmigo(){
     const inputAmigo=document.getElementById("amigo");
-    const nombreAmigo= inputAmigo.value.trim();
+    const nombreAmigo= inputAmigo.value;
 
     //Validar campo no vacio
 
- if  (nombreAmigo ===""){
+ if  (!nombreAmigo){
         alert("Digitar un nombre Valido");
         return;
             }
 
-
-        // agregar el nombre al arreglo amigos
-
           amigos.push(nombreAmigo);
-
-        //actualizar la lista en el Html
-        actualizarlista();
-
-        inputAmigo.value="";
-        inputAmigo.focus();
+          input.Amigo.value="";
+          inputAmigo.focus();
 
     }
 
-     //actualizar la lista de amigos interfaz
 
      function actualizarlista(){
            const listaAmigos=document.getElementById('listaAmigos');
