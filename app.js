@@ -22,14 +22,16 @@ function agregarAmigo(){
 
 
      function actualizarlista(){
-           const listaAmigos=document.getElementById('listaAmigos');
+           let  listaAmigos=document.getElementById('listaAmigos');
 
            //limpiar contenido de la lista actualizarlista
            listaAmigos.innerHTML="";
     
      //recorrer el arreglo
 
-     amigos.forEach(amigo => {
+     for(let i=0; i < amigos.length;i++){
+
+     }
         const li=document.createElement("li");
         li.textContent=amigo;
         listaAmigos.appendChild(li);
